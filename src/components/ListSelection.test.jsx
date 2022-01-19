@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ListSelection from "./ListSelection";
 
-test("select, deselect, and remove buttons work", async () => {
+test("Table displays content", async () => {
   render(
     <ListSelection
       listSelectionData={{
@@ -18,5 +18,8 @@ test("select, deselect, and remove buttons work", async () => {
     />
   );
 
+  expect(screen.getByText(/45/i)).toBeInTheDocument();
   expect(screen.getByText(/Naan/i)).toBeInTheDocument();
+  expect(screen.getByText(/bread/i)).toBeInTheDocument();
+  expect(screen.getByText(/Air/i)).toBeInTheDocument();
 });
